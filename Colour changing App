@@ -1,0 +1,36 @@
+from tkinter import*
+#create main window
+gui=Tk()
+gui.title("Color Changer App")
+gui.geometry("400x300")
+
+#function to change background color
+def change_background(color):
+    gui.configure(bg=color)
+
+#heading label
+entertext=Label(gui,text="Click a button to change background color",font=("Arial",14))
+entertext.pack(pady=20)
+
+#frame for button
+button_frame=Frame(gui)
+button_frame.pack(pady=10)
+
+#Buttons
+red=Button(button_frame,text="Red",fg="white",bg="red",command=lambda: change_background("red"))
+red.pack(side="left",padx=5)
+
+green=Button(button_frame,text="Green",fg="white",bg="green",command=lambda: change_background("green"))
+green.pack(side="left",padx=5)
+
+blue=Button(button_frame,text="Blue",fg="white",bg="blue",command=lambda: change_background("blue"))
+blue.pack(side="left",padx=5)
+
+yellow=Button(button_frame,text="Yellow",fg="black",bg="yellow",command=lambda: change_background("yellow"))
+yellow.pack(side="left",padx=5)
+
+white=Button(button_frame,text="White",fg="black",bg="white",command=lambda: change_background("white"))
+white.pack(side="left",padx=5)
+
+#start the GUI loop
+gui.mainloop()
